@@ -9,7 +9,12 @@ class Doctor
   def add_appointment(appointment)
     appointment.doctor = self
     self.appointments << appointment
+  end
 
+  def patients
+    self.appointments.collect do |appointment|
+      appointment.patient
+    end
   end
 
 end
